@@ -1,0 +1,56 @@
+﻿@page "{gender}/{handler?}"
+@model Shop.Pages.ForShop.ProductsModel
+@{
+}
+<link rel="stylesheet" href="~/css/NavBars.css" />
+<a asp-page="/ForShop/AddProduct">+</a>
+<a asp-page="/index" style="text-decoration:none;color:lightgray;font-size:14px;margin-top:10px;">Главная /</a>
+<a style="font-size:14px;margin-top:10px;"> @Model.Info</a>
+
+<div class="sidenav block-left">
+    <h5 style="margin-top:50px">Фильтр</h5>
+    <h6>Цена</h6>
+    <h6>Категория</h6>
+    <div class="container" style="width:300px; height: 300px; overflow-y: scroll;">
+        @foreach (string category in Model.Categories.Select(c => c.Name))
+        {
+            <div>
+                <input type="checkbox" />
+                <label>@category</label>
+            </div>
+        }
+    </div>
+    <h6>Цвет</h6>
+    <div class="container" style="width:300px; height: 300px; overflow-y: scroll;">
+        @foreach (string color in Model.Colors.Select(c => c.Name))
+        {
+            <div>
+                <input type="checkbox" />
+                <label>@color</label>
+            </div>
+        }
+    </div>
+    <h6>Размер</h6>
+    <div class="container" style="width:300px; height: 300px; overflow-y: scroll;">
+        @foreach (string size in Model.Sizes.Select(c => c.Name))
+        {
+            <div>
+                <input type="checkbox" />
+                <label>@size</label>
+            </div>
+        }
+    </div>
+    <h6>Бренд</h6>
+    <div class="container" style="width:300px; height: 300px; overflow-y: scroll;">
+        @foreach (string brand in Model.Brands.Select(c => c.Name))
+        {
+            <div>
+                <input type="checkbox" />
+                <label>@brand</label>
+            </div>
+        }
+    </div>
+</div>
+<div class="block-right">
+
+</div>
