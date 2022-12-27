@@ -18,14 +18,21 @@ namespace Shop.Services
             string fileName = Path.GetFileNameWithoutExtension(image.ImageFile.FileName);
             string extension = Path.GetExtension(image.ImageFile.FileName);
             image.Name = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-            _context.Images.Add(image);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Images.Add(image);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             string path = Path.Combine(wwwRootPath + "/Img/Clothes", fileName);
             using(FileStream fs = new FileStream(path, FileMode.Create))
             {
                 await image.ImageFile.CopyToAsync(fs);
-            }
-           
-        }
+            }           
+        }        
     }
 }

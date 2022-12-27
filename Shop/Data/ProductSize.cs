@@ -11,6 +11,7 @@ namespace Shop.Data
         public int ProductId { get; set; }
         [Required, ForeignKey("Sizes")]
         public int SizeId { get; set; }
+        public int Count { get; set; }
 
     }
 }

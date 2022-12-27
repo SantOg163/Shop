@@ -40,33 +40,32 @@
 }
 
 .sidenav {
-    height: auto;
+    margin-top:50px;
     width: 200px;
     position: sticky;
     z-index: 1;
     overflow-x: hidden;
-    padding-top: 20px;
     display: block;
 }
 
-/* Style the sidenav links and the dropdown button */
-.sidenav a, .dropdown-btn {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    display: block;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    outline: none;
-}
-
-    /* On mouse-over */
-    .sidenav a:hover, .dropdown-btn:hover {
-        color: #f1f1f1;
+    /* Style the sidenav links and the dropdown button */
+    .sidenav a, .dropdown-btn {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        display: block;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        outline: none;
     }
+
+        /* On mouse-over */
+        .sidenav a:hover, .dropdown-btn:hover {
+            color: #f1f1f1;
+        }
 
 /* Main content */
 .main {
@@ -92,17 +91,17 @@
     height: 100px;
     background-color: black;
 }
+
 .block-left {
-    width: 30%;
-    height: 100vh;
-    overflow: auto;
+    width: 20%;
+    height: auto;
     float: left;
+    display: inline-block;
 }
 
 .block-right {
-    width: 70%;
+    width: 80%;
     height: auto;
-    overflow: auto;
-    overflow-x: hidden;
-    display: block;
+    float:right;
+    display: inline-block;
 }
